@@ -1,0 +1,53 @@
+/* src/pages/OrderPlaced.css */
+.order-placed-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+  
+  .order-placed-content {
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .order-placed-image {
+    margin-bottom: 20px;
+  }
+  
+  .order-placed-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .order-placed-message {
+    margin-top: 20px;
+  }
+  
+  .order-placed-icon {
+    margin-bottom: 20px;
+  }
+  
+  .order-placed-icon svg {
+    color: #4CAF50;
+  }
+  
+  .order-placed-message h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .order-placed-message p {
+    font-size: 1.2em;
+    color: #666;
+  }
+  

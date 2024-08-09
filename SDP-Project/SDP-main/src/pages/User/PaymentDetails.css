@@ -1,0 +1,51 @@
+.payment-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.payment-image {
+  flex: 1;
+  padding: 20px;
+}
+
+.payment-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.payment-form {
+  flex: 2;
+  padding: 10px;
+}
+
+.payment-form h1 {
+  margin-bottom: 5px;
+}
+
+.payment-form label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.payment-form input {
+  width: 100%; /* Adjust the width as needed */
+  padding: 6px; /* Reduce padding for smaller input boxes */
+  margin-bottom: 15px; /* Adjust spacing between fields */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.payment-form button {
+  padding: 10px 20px;
+  background-color: #e3180a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.payment-form button:hover {
+  background-color: #eb1010;
+}

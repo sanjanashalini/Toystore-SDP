@@ -1,0 +1,30 @@
+.orders {
+    display: flex; /* Align containers horizontally */
+    flex-wrap: wrap; /* Allow containers to wrap to next line */
+    justify-content: space-between; /* Distribute space between containers */
+    padding: 20px;
+  }
+  
+  .order-container {
+    flex: 1 1 calc(33.33% - 40px); /* Set flexible width with margin taken into account */
+    margin: 10px; /* Space between containers */
+    padding: 20px;
+    border: 1px solid #ec1c1c; /* Border around each container */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f9f9f9; /* Background color */
+    text-align: center; /* Center text horizontally */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visual separation */
+  }
+  
+  .order-container h3 {
+    margin: 0 0 10px 0; /* Margin for heading */
+    font-size: 1.5em; /* Font size for the heading */
+    color: #333; /* Text color */
+  }
+  
+  .order-container p {
+    margin: 0; /* Remove default margin */
+    font-size: 1.2em; /* Font size for the text */
+    color: #666; /* Text color */
+  }
+  
