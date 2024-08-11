@@ -1,4 +1,4 @@
-import { DeleteUserByID, getAllUsers } from "./api"
+import { DeleteUserByID, getAllUsers ,DeleteProductByID,ProductData,addProduct,orderData} from "./api"
 
 
 
@@ -12,5 +12,28 @@ const deleteUser = async (uid) => {
     const res = await DeleteUserByID(uid);
     return res?.data;
 }
+const deleteproduct = async (uid) => {
+    console.log(uid)
+    const res = await DeleteProductByID(uid);
+    return res?.data;
+}
+const deleteOrder = async (uid) => {
+    console.log(uid)
+    const res = await DeleteOrdertByID(uid);
+    return res?.data;
+}
+const getOrderData = async () => {
+    const res = await orderData()
+    return res?.data;
+}
+const getProductData = async () => {
+    const res = await ProductData()
+    return res?.data;
+}
 
-export const Admin = { getAllUsersData, deleteUser }
+const PostProduct = async(product)=>{
+    const res = await addProduct(product);
+    return res?.data;
+}
+
+export const Admin = { getAllUsersData, deleteUser,deleteproduct,getProductData,PostProduct ,getOrderData,deleteOrder}

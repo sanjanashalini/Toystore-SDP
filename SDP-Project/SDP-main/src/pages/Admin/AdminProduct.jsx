@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Table,
   TableBody,
@@ -25,23 +25,45 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 
+import toast, { Toaster } from 'react-hot-toast';
+import { Admin } from './../../services/admin';
+
 const AdminProducts = () => {
   const [open, setOpen] = useState(false);
-  const [products, setProducts] = useState([
-    { id: 1, name: 'Product 1', image: 'image1.jpg', price: 100, color: 'Red' },
-    { id: 2, name: 'Product 2', image: 'image2.jpg', price: 200, color: 'Blue' }
-  ]);
+  const [editProduct, setEditProduct] = useState(null);
+  const [products, setProducts] = useState([]);
   const [newProduct, setNewProduct] = useState({ name: '', image: '', price: 0, color: '' });
 
-  const handleDelete = (id) => {
-    setProducts(prevProducts => prevProducts.filter(product => product.id !== id));
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const res = await Admin.getProductData();
+      setProducts(res);
+    };
+    fetchProducts();
+  }, []);
+
+  const handleDelete = async (id) => {
+    try {
+      await Admin.deleteproduct(id);
+      setProducts(products.filter(product => product.id !== id));
+      toast.success('Product Deleted!');
+    } catch (error) {
+      console.error("Error deleting product:", error);
+      toast.error('Error deleting product.');
+    }
   };
 
-  const handleAddProduct = () => {
-    const newProductWithId = { ...newProduct, id: products.length + 1 };
-    setProducts(prevProducts => [...prevProducts, newProductWithId]);
-    setNewProduct({ name: '', image: '', price: 0, color: '' });
-    setOpen(false);
+  const handleAddProduct = async () => {
+    try {
+      const addedProduct = await Admin.PostProduct(newProduct);
+      setProducts([...products, addedProduct]);
+      setNewProduct({ name: '', image: '', price: 0, color: '' });
+      setOpen(false);
+      toast.success('Product Added!');
+    } catch (error) {
+      console.error("Error adding product:", error);
+      toast.error('Error adding product.');
+    }
   };
 
   const handleChange = (e) => {
@@ -53,7 +75,7 @@ const AdminProducts = () => {
       <Card className='shadow-sm shadow-primary'>
         <CardHeader className='w-full flex flex-row justify-between items-center'>
           <CardTitle>Products</CardTitle>
-          <Button onClick={() => setOpen(!open)}>
+          <Button onClick={() => setOpen(true)}>
             <Plus className='h-10 w-10 mr-2' /> Add
           </Button>
         </CardHeader>
@@ -74,7 +96,7 @@ const AdminProducts = () => {
                 <TableRow key={product.id}>
                   <TableCell className="font-medium">{product.id}</TableCell>
                   <TableCell>{product.name}</TableCell>
-                  <TableCell>{product.image}</TableCell>
+                  <TableCell><img src={product.image} alt={product.name} className="w-16 h-16 object-cover" /></TableCell>
                   <TableCell>{product.price}</TableCell>
                   <TableCell>{product.color}</TableCell>
                   <TableCell>
@@ -95,40 +117,33 @@ const AdminProducts = () => {
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetContent>
           <SheetHeader>
-            <SheetTitle>Add Product</SheetTitle>
+            <SheetTitle>{editProduct ? 'Edit Product' : 'Add Product'}</SheetTitle>
           </SheetHeader>
           <div className="grid gap-4 py-4">
             <div className="flex flex-col items-start gap-4">
-              <Label htmlFor="name" className="text-right">
-                Name
-              </Label>
+              <Label htmlFor="name" className="text-right">Name</Label>
               <Input id="name" value={newProduct.name} onChange={handleChange} className="col-span-3" />
             </div>
             <div className="flex flex-col items-start gap-4">
-              <Label htmlFor="image" className="text-right">
-                Image
-              </Label>
+              <Label htmlFor="image" className="text-right">Image</Label>
               <Input id="image" value={newProduct.image} onChange={handleChange} className="col-span-3" />
             </div>
             <div className="flex flex-col items-start gap-4">
-              <Label htmlFor="price" className="text-right">
-                Price
-              </Label>
+              <Label htmlFor="price" className="text-right">Price</Label>
               <Input id="price" type="number" value={newProduct.price} onChange={handleChange} className="col-span-3" />
             </div>
             <div className="flex flex-col items-start gap-4">
-              <Label htmlFor="color" className="text-right">
-                Color
-              </Label>
+              <Label htmlFor="color" className="text-right">Color</Label>
               <Input id="color" value={newProduct.color} onChange={handleChange} className="col-span-3" />
             </div>
           </div>
           <SheetFooter className='flex flex-col flex-1'>
-            <Button className='w-1/2 outline bg-red-400/90 hover:bg-red-400' onClick={() => setOpen(!open)}>Cancel</Button>
+            <Button className='w-1/2 outline bg-red-400/90 hover:bg-red-400' onClick={() => setOpen(false)}>Cancel</Button>
             <Button type="submit" className='w-1/2' onClick={handleAddProduct}>Save changes</Button>
           </SheetFooter>
         </SheetContent>
       </Sheet>
+      <Toaster />
     </div>
   );
 };

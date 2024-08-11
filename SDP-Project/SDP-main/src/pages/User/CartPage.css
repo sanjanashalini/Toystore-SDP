@@ -1,0 +1,165 @@
+.cart-page {
+    max-width: 1400px; /* Increased max-width for a larger container */
+    margin: 30px auto; /* Adjusted margin for better spacing */
+    padding: 30px; /* Increased padding for more space inside the container */
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-page h2 {
+    margin-top: 0;
+    font-size: 28px; /* Increased font size for the header */
+    color: #333;
+}
+
+.cart-page p {
+    font-size: 20px; /* Increased font size for empty cart message */
+    color: #666;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0; /* Increased padding for each item */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.cart-item:hover,
+.cart-item:focus {
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item:active {
+    background-color: #e9ecef;
+}
+
+.cart-item-image {
+    width: 120px; /* Increased size of the image */
+    height: 120px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.product-details {
+    flex: 1;
+}
+
+.product-details h3 {
+    margin: 0;
+    font-size: 20px; /* Increased font size for product name */
+    color: #333;
+}
+
+.product-details p {
+    margin: 5px 0;
+    font-size: 18px; /* Increased font size for price and subtotal */
+    color: #666;
+}
+
+.quantity-selector {
+    margin: 10px 0;
+}
+
+.quantity-selector label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.quantity-selector input {
+    width: 80px; /* Increased width for quantity input */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.cart-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.buy-now,
+.delete-item {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px; /* Increased padding for buttons */
+    cursor: pointer;
+    font-size: 18px; /* Increased font size for buttons */
+    margin: 5px 0;
+    transition: background-color 0.3s;
+}
+
+.buy-now {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.buy-now:hover {
+    background-color: #218838;
+}
+
+.delete-item {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.delete-item:hover {
+    background-color: #c82333;
+}
+
+.price-details {
+    margin-top: 30px; /* Increased margin for better separation */
+}
+
+.price-details h3 {
+    margin-top: 0;
+    font-size: 22px; /* Increased font size for the price details header */
+    color: #333;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0; /* Increased padding for price items */
+    border-bottom: 1px solid #ddd;
+}
+
+.price-item span {
+    font-size: 18px; /* Increased font size for price details */
+    color: #666;
+}
+
+.price-item.total {
+    font-weight: bold;
+    font-size: 20px; /* Increased font size for the total price */
+    color: #333;
+    border-bottom: none;
+    margin-top: 10px;
+}
+
+.proceed-to-pay {
+    display: block;
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px; /* Increased padding for the button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; /* Increased font size for the button */
+    margin-top: 30px; /* Increased margin for better spacing */
+    transition: background-color 0.3s;
+}
+
+.proceed-to-pay:hover {
+    background-color: #0056b3;
+}

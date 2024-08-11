@@ -35,8 +35,8 @@ const Register = () => {
     }
     return (
         <>
-            <div className='p-0 m-0 h-[90vh] w-screen flex justify-center items-center flex-col'>
-                <form className='flex flex-col gap-5 bg-slate-50/80 h-4/6 w-[30%] items-center justify-center rounded-md shadow-md shadow-red-100' onSubmit={handleSubmit}>
+            <div className='p-0 m-0 h-[120vh] w-screen flex justify-center items-center flex-col'>
+                <form className='flex flex-col gap-5 bg-slate-50/80 h-5/6 w-[30%] items-center justify-center rounded-md shadow-md shadow-red-100' onSubmit={handleSubmit}>
                     <input type="text" name="" id="name" placeholder='Name' className='bg-red-100/50 outline-none border-2 border-transparent focus:border-b-2 focus:border-b-red-300 rounded-sm w-[80%] text-black placeholder:text-black p-2 shadow-sm' onChange={handleChange} required />
                     <input type="text" name="" id="phone" placeholder='Phone' className='bg-red-100/50 outline-none border-2 border-transparent focus:border-b-2 focus:border-b-red-300 rounded-sm w-[80%] text-black placeholder:text-black p-2 shadow-sm' onChange={handleChange} required />
                     <input type="text" name="" id="address" placeholder='Address' className='bg-red-100/50 outline-none border-2 border-transparent focus:border-b-2 focus:border-b-red-300 rounded-sm w-[80%] text-black placeholder:text-black p-2 shadow-sm' onChange={handleChange} required />

@@ -10,11 +10,20 @@ import { User } from "lucide-react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import "./Nav.css"
+import { Button } from "@/components/ui/button";
 
-
+import { useNavigate } from "react-router-dom";
+import { authService } from "@/services/auth";
 
 const ShopByCategory = () => {
   const [activeCategory, setActiveCategory] = useState("Men");
+  const navigate = useNavigate();
+
+ 
+  const handleNavigation = (path) => {
+      authService.SignOut();
+      navigate(path);
+  };
 
   return (
     <>
@@ -33,10 +42,9 @@ const ShopByCategory = () => {
                     <input type="text" placeholder="Search..." />
                 </div>
                 </div>
-
-                <ul className="nav-links">
-                  
-                </ul>
+            <div className="pl-3">
+                <Button  onClick={()=>handleNavigation("/")} className="bg-red-200  border-black">Sign Out</Button>
+                </div>
             </div>
         </nav>
       <br></br>

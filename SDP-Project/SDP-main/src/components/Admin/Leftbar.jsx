@@ -3,11 +3,13 @@ import { NavLink } from 'react-router-dom'
 import { LayoutDashboard, Cog, Mail, Users } from 'lucide-react'
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { authService } from '@/services/auth';
 const Leftbar = () => {
     const navigate = useNavigate();
 
     // Function to handle navigation based on category
     const handleNavigation = (path) => {
+        authService.SignOut();
         navigate(path);
     };
     const AdminLinks = [
@@ -41,7 +43,7 @@ const Leftbar = () => {
                 }
             </div>
             <div className='h-1/6 w-full flex flex-col justify-center items-center'>
-            <Button  onClick={()=>handleNavigation("/logout")} className="bg-red-600 border-black">Logout</Button>
+            <Button  onClick={()=>handleNavigation("/")} className="bg-red-600 border-black">Logout</Button>
             </div>
 
         </div>

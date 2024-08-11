@@ -21,6 +21,14 @@ const getUserEmail = () => {
     return null;
 }
 
+const getProductId = () => {
+    const token = getToken();
+    if (token) {
+        const payLoad = jwtDecode(token);
+        return payLoad?.sub;
+    }
+    return null;
+}
 const getUserRole = () => {
     const token = getToken();
     if (token) {
@@ -44,4 +52,4 @@ const SignIn = (email, password) => axiosInstance.post("/auth/login", { email, p
 const SignOut = () => localStorage.clear()
 
 
-export const authService = { getToken, setToken, getUserEmail, getUserRole, isLoggedIn, SignIn, SignOut };
+export const authService = { getToken, setToken, getUserEmail, getUserRole, isLoggedIn, SignIn, SignOut,getProductId };

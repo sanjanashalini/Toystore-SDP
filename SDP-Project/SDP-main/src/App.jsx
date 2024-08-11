@@ -23,6 +23,7 @@ import CartPage from './pages/User/CartPage'
 import AdminProducts from './pages/Admin/AdminProduct'
 import PaymentDetails from './pages/User/PaymentDetails'
 import OrderPlaced from './pages/User/OrderPlaced'
+import AddressDetails from './pages/User/Address'
 
 
 const App = () => {
@@ -42,9 +43,11 @@ const App = () => {
                         <Route path='/girls-product' element={<GirlsProduct/>} />
                         <Route path='/kidsproduct' element={<KidssProduct/>} />
                         <Route path="/order-placed" element={<OrderPlaced />} />
-                        <Route path='/cart' element={<CartPage/>} />
+                        <Route path="/address" element={<AddressDetails />} />
+                      
                         <Route path='/logout' element={<Login/>}/>
                         <Route path='/payment' element={<PaymentDetails/>}/>
+                        <Route path="/cart" element={<CartPage />} />
                         
                         <Route path='/userhome' element={<UserHome />} />
                     </Route>

@@ -19,12 +19,23 @@ axiosInstance.interceptors.request.use(
     }
 );
 const SignUp = (name, email, phone, address, password) => axiosInstance.post('/auth/register', { name, email, phone, address, password });
-const WebData = () => axiosInstance.get('/web/site');
+const WebData = () => axios.get('/web/site');
 const UserData = (email) => axiosInstance.get(`/users/email/${email}`);
 const UpdateUserByID = (id, data) => axiosInstance.put(`/users/update/${id}`, data)
 const DeleteUserByID = (id) => axiosInstance.delete(`/users/delete/${id}`)
+const ProductData = () => axiosInstance.get(`/users/getproduct`);
+const DeleteProductByID = (id)=> axiosInstance.delete(`users/deleteproduct/${id}`)
+const addProduct = (product) => axiosInstance.post(`users/addproducts`,product);
+const orderData = ()=>axiosInstance.get(`/orders/getOrder/All`);
+const DeleteOrder = (id)=> axiosInstance.delete(`orders/delete/${id}`);
 
-//Admin
 const getAllUsers = () => axiosInstance.get('/users/all')
 
-export { axiosInstance, SignUp, WebData, UserData, UpdateUserByID, getAllUsers, DeleteUserByID }
+export { axiosInstance, SignUp, WebData, UserData, UpdateUserByID, getAllUsers, DeleteUserByID,ProductData,DeleteProductByID ,addProduct,orderData,DeleteOrder}
+
+
+
+
+
+
+
