@@ -33,8 +33,8 @@ const ShopByCategory = () => {
             <div className="navbar-container">
             <div className="w-1/4 h-full text-primary font-bold flex justify-start items-center text-lg">
       <div className="flex-shrink-0">
-                        <img className="block lg:hidden h-8 w-auto" src="https://i.pinimg.com/236x/10/cc/fb/10ccfb09dee1a6975d90eeef70c9b8bc.jpg" alt="Logo" />
-                        <img className="hidden lg:block h-12" src="https://i.pinimg.com/236x/10/cc/fb/10ccfb09dee1a6975d90eeef70c9b8bc.jpg" alt="Logo" />
+                        <img className="block lg:hidden h-8 w-auto" src="https://i.pinimg.com/236x/fb/4e/21/fb4e21b566efc504afc20c4c8008b1a1.jpg" alt="Logo" />
+                        <img className="hidden lg:block h-12" src="https://i.pinimg.com/236x/fb/4e/21/fb4e21b566efc504afc20c4c8008b1a1.jpg" alt="Logo" />
                     </div>
       </div>
       <div className="design-panel">
@@ -43,14 +43,14 @@ const ShopByCategory = () => {
                 </div>
                 </div>
             <div className="pl-3">
-                <Button  onClick={()=>handleNavigation("/")} className="bg-red-200  border-black">Sign Out</Button>
+                <Button  onClick={()=>handleNavigation("/")} className="bg-black  border-black">Sign Out</Button>
                 </div>
             </div>
         </nav>
       <br></br>
       <br></br>
     
-    <img data-v-dd2afbb0="" src="https://cdn.pixelbin.io/v2/black-bread-289bfa/HrdP6X/original/hamleys-banner/17213777841817x747_Gaming_1.webp
+    <img data-v-dd2afbb0="" src="https://cdn.pixelbin.io/v2/black-bread-289bfa/HrdP6X/original/hamleys-banner/1722839316Desktop_Banner_(43).webp
           " class="w-100 swiper-lazy swiper-lazy-loaded"></img>
           <br></br>
       <h2 className="font-semibold text-1xl sm:text-0xl md:text-2xl lg:text-2xl">Shop by Category</h2>
@@ -84,8 +84,8 @@ const ShopByCategory = () => {
    
     <footer className="footer">
         <div className="flex-shrink-0 pl-20">
-                        <img className="block lg:hidden h-8 w-auto" src="https://i.pinimg.com/236x/10/cc/fb/10ccfb09dee1a6975d90eeef70c9b8bc.jpg" alt="Logo" />
-                        <img className="hidden lg:block h-12" src="https://i.pinimg.com/236x/10/cc/fb/10ccfb09dee1a6975d90eeef70c9b8bc.jpg" alt="Logo" />
+                        <img className="block lg:hidden h-8 w-auto" src="https://i.pinimg.com/236x/fb/4e/21/fb4e21b566efc504afc20c4c8008b1a1.jpg" alt="Logo" />
+                        <img className="hidden lg:block h-12" src="https://i.pinimg.com/236x/fb/4e/21/fb4e21b566efc504afc20c4c8008b1a1.jpg" alt="Logo" />
                     </div>
       <div className="footer-content">
       

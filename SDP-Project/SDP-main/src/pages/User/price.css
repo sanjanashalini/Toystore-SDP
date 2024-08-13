@@ -45,7 +45,7 @@
     width: 100%;
     padding: 15px;
     margin-top: 20px;
-    background-color: #007bff;
+    background-color: #ed3535;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -56,6 +56,6 @@
   }
   
   .proceed-to-pay:hover {
-    background-color: #0056b3;
+    background-color: #e25659;
   }
   

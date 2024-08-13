@@ -178,13 +178,15 @@
     color: transparent;
     cursor: pointer;
     transition: color 0.3s;
+ 
     display: flex;
     align-items: center;
     justify-content: center;
   }
   
   .wishlist:hover {
-    color: rgba(255, 0, 0, 0.7);
+    color: red;
+    background-color: #e88b8b;
   }
   
   
@@ -223,4 +225,10 @@
     box-sizing: border-box;
     transform: scale(0.9); /* Reduce grid size */
     transition: transform 0.3s ease; /* Smooth transition */
+  }
+  .add-to-cart{
+    background-color: #f12f2f;
+  }
+  .add-to-cart:hover{
+    background-color: #ec5050;
   }

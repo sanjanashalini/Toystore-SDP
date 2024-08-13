@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ProductData } from "@/services/api";
 import { useCart } from "./CartContext";
+import toast,{Toaster} from "react-hot-toast";
 
 const ToyProduct = () => {
   const [productList, setProductList] = useState([]);
@@ -15,7 +16,10 @@ const ToyProduct = () => {
   });
 
   const { addToCart } = useCart(); // Get the addToCart function from the context
-
+const handleCart=(product)=>{
+  toast.success("Added to cart");
+  addToCart(product);
+}
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -105,13 +109,14 @@ const ToyProduct = () => {
                 <p className='font-bold'>Price: ₹{product.price}</p>
                 <p className='font-bold'>Color: {product.color}</p>
               </div>
-              <button className="add-to-cart" onClick={() => addToCart(product)}>
+              <button className="add-to-cart" onClick={() => handleCart(product)}>
                 Add to Cart
               </button>
             </div>
           ))}
         </div>
       </main>
+      <Toaster/>
     </div>
   );
 };

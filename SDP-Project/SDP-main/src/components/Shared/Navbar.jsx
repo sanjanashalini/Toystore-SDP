@@ -21,8 +21,8 @@ const Navbar = () => {
     <div className="w-full h-[10vh] flex flex-row justify-center items-center shadow-sm shadow-primary/50">
       <div className="w-1/4 h-full text-primary font-bold flex justify-start items-center text-lg">
       <div className="flex-shrink-0">
-                        <img className="block lg:hidden h-8 w-auto" src="https://i.pinimg.com/236x/10/cc/fb/10ccfb09dee1a6975d90eeef70c9b8bc.jpg" alt="Logo" />
-                        <img className="hidden lg:block h-12" src="https://i.pinimg.com/236x/10/cc/fb/10ccfb09dee1a6975d90eeef70c9b8bc.jpg" alt="Logo" />
+                        <img className="block lg:hidden h-8 w-auto" src="https://i.pinimg.com/236x/fb/4e/21/fb4e21b566efc504afc20c4c8008b1a1.jpg" alt="Logo" />
+                        <img className="hidden lg:block h-12" src="https://i.pinimg.com/236x/fb/4e/21/fb4e21b566efc504afc20c4c8008b1a1.jpg" alt="Logo" />
                     </div>
       </div>
       

@@ -20,10 +20,19 @@ const CartPage = () => {
 };
 
   return (
+
+    
+      
     <div className="cart-page">
+      <nav className="navbar">
+        <button onClick={() => handleNavigation("/shopbycategory")} className="nav-button">Home</button>
+        <button className="nav-button">WishList ❤</button>
+        <button onClick={() => handleNavigation("/cart")} className="nav-button">Cart 🛒</button>
+      </nav>
       <h2>Your Cart</h2>
+     
       {cartItems.length === 0 ? (
-        <p>Your cart is empty</p>
+        <h1><b>Your cart is empty</b></h1>
       ) : (
         <>
           <ul>
@@ -45,14 +54,13 @@ const CartPage = () => {
                   </div>
                   <p>Subtotal: ₹{item.price * item.quantity}</p>
                 </div>
-                <div className="cart-actions">
-                  <button className="buy-now" onClick={() => removeFromCart(item.id)}>
-                    Buy Now
-                  </button>
-                  <button className="delete-item" onClick={() => removeFromCart(item.id)}>
+             
+                 <div className="pl-3">
+                  <button className="bg-red-600" onClick={() => removeFromCart(item.id)}>
                     🗑️
                   </button>
-                </div>
+                  </div>
+                
               </li>
             ))}
           </ul>
